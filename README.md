@@ -1,2 +1,2 @@
 # Study
-My repository to store the studied contents
+Repositório criado para guardar os conteudos que estudo e as evoluções que tenho no dia a dia.
