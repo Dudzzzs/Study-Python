@@ -16,12 +16,21 @@ peso = 82.7
 
 print(nome , idade , peso)
 
-
-##Criando interatividade com variáveis
+#Criando interatividade com variáveis
 nome = input('Qual seu nome?')
 idade = input('Qual sua idade?')
 peso = input('Qual seu peso?')
 
 print(nome , idade , peso)
+
+#Converter valores
+int() #Transforma mensagem em números inteiros
+float() #Transforma mensagem em números decimais
+bool() #Transforma em booleano
+str() #Transforma em string
+
+#Format
+nome = 'Eduardo'
+print('Seja bem vindo {}'.format(nome)) #Substitui a chave pelo que ta escrito dentro dos parênteses
 
 
