@@ -33,4 +33,11 @@ str() #Transforma em string
 nome = 'Eduardo'
 print('Seja bem vindo {}'.format(nome)) #Substitui a chave pelo que ta escrito dentro dos parênteses
 
+#Import
+import math #Importa todo o pacote math
+from math import sqrt #Importa somente a funcionalidade sqrt do pacote math
+print('A raiz quadrada de {} é igual a {}'.format(81, math.sqrt(81)))
+
+
+
 
