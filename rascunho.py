@@ -1,12 +1,14 @@
-# ===== Desafio 21 =====
+# ===== Desafio 22 =====
 
-import random
+import pygame
 
-aluno1 = input('Digite o nome do primeiro aluno: ')
-aluno2 = input('Digite o nome do segundo aluno: ')
-aluno3 = input('Digite o nome do terceiro aluno: ')
-aluno4 = input('Digite o nome do quarto aluno: ')
+pygame.mixer.init()
+pygame.mixer.music.load(r'C:\Users\Dudu\Downloads\kamehameha.mp3')
+pygame.mixer.music.play()
 
-alunos = [aluno1, aluno2, aluno3, aluno4]
+while pygame.mixer.music.get_busy():
+    continue
 
-print('A sequência de apresentacão é {}'.format(random.sample(alunos, k=4)))
+
+
+
