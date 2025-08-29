@@ -82,4 +82,15 @@ if resposta == numero:
 else:
     print('Você errou! O número escolhido foi {}'.format(numero))
 
+# ===== Desafio 30 =====
+
+velocidadeCarro = int(input('Qual velocidade o carro estava?').strip())
+velocidadeMax = 80
+
+if velocidadeCarro > velocidadeMax:
+    multa = (velocidadeCarro - velocidadeMax) * 7
+    print('Você foi multado por ultrapassar o limite de velocidade. Você será multado em R${} por estar {}km/h acima do limite de velocidade de {}km/h.'.format(multa, velocidadeCarro - velocidadeMax, velocidadeMax ))
+else:
+    print('Você está dentro do limite de velocidade. Parabéns!')
+
 
