@@ -77,3 +77,17 @@ if (r1 + r2) > r3 and (r1 + r3) > r2 and (r2 + r3) > r1:
 else:
     print('Com essas 3 retas de comprimento {}, {} e {} você não pode formar um triângulo!'.format(r1, r2, r3))
 
+# ===== Desafio 37 =====
+
+numeroI = int(input('Digite o número inicial da contagem:').strip())
+numeroF = int(input('Digite o número final da contagem:').strip())
+
+if numeroI < numeroF:
+    while numeroI <= numeroF:
+        print('\033[1;32m{}\033[m'.format(numeroI))
+        numeroI = numeroI + 1
+else:
+    while numeroI >= numeroF:
+        print('\033[1;31m{}\033[m'.format(numeroI))
+        numeroI = numeroI - 1
+

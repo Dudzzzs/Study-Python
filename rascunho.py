@@ -1,10 +1,13 @@
-# ===== Desafio 36 =====
+# ===== Desafio 37 =====
 
-r1 = float(input('Digite o comprimento da primeira reta: '))
-r2 = float(input('Digite o comprimento da segunda reta: '))
-r3 = float(input('Digite o comprimento da terceira reta: '))
+numeroI = int(input('Digite o número inicial da contagem:').strip())
+numeroF = int(input('Digite o número final da contagem:').strip())
 
-if (r1 + r2) > r3 and (r1 + r3) > r2 and (r2 + r3) > r1:
-    print('Com essas 3 retas de comprimento {}, {} e {} você pode formar um triângulo!'.format(r1, r2, r3))
+if numeroI < numeroF:
+    while numeroI <= numeroF:
+        print('\033[1;32m{}\033[m'.format(numeroI))
+        numeroI = numeroI + 1
 else:
-    print('Com essas 3 retas de comprimento {}, {} e {} você não pode formar um triângulo!'.format(r1, r2, r3))
+    while numeroI >= numeroF:
+        print('\033[1;31m{}\033[m'.format(numeroI))
+        numeroI = numeroI - 1
