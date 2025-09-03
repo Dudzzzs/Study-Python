@@ -41,8 +41,11 @@ print('A raiz quadrada de {} é igual a {}'.format(81, math.sqrt(81)))
 #Operadores condicionais
 if 'condicao' == 'condicao': #SE a condicão for verdadeira ele executa o respectivo codigo
     'codigo'
+elif 'condicao' == 'condicao': #Se a primeira condição for falsa mas ainda houver uma terceira ou outra condição (Else + If)
+    'Código'
 else: #SE a condicão for falsa ele executa o respectivo código
     'codigo'
+
 
 
 

@@ -91,3 +91,47 @@ else:
         print('\033[1;31m{}\033[m'.format(numeroI))
         numeroI = numeroI - 1
 
+# ===== Desafio 38 =====
+
+print('\033[1;34mOlá, Bom dia!, preciso das seguintes informações para analisarmos o empréstimo:')
+valorCasa = float(input('\033[1;35mQual o valor do imóvel que deseja comprar?'))
+salario = float(input('\033[1;36mQual o valor do seu salário?'))
+tempo = int(input('\033[1;33mEm quantos anos deseja quitar o imóvel?'))
+
+prestacaoMensal = valorCasa / (tempo * 12)
+
+if prestacaoMensal > ((30/100) * salario):
+    print('\033[1;31mO valor da prestação é de R${:.2f} e é maior que 30% do salário, por isso o empréstimo está NEGADO!'.format(prestacaoMensal))
+else:
+    print('\033[1;32mO valor da prestação de R${:.2f} é menor que 30% do seu salário e por isso seu empréstimo está APROVADO!'.format(prestacaoMensal))
+
+# ===== Desafio 39 =====
+
+fecharCor = '\033[m'
+
+numero = int(input('Digite um número inteiro: '))
+
+opcao = int(input('O número é {} digite \033[1;31m1{} para convete-lo em binário, \033[1;32m2{} para octal e \033[1;33m3{} para hexadecimal: '.format(numero, fecharCor, fecharCor, fecharCor)))
+
+if opcao == 1:
+    print('O número {} conertido em binário é: {}.'.format(numero, bin(numero)[2:]))
+elif opcao == 2:
+     print('O número {} conertido em octal é: {}.'.format(numero, oct(numero)[2:]))
+elif opcao == 3:
+     print('O número {} conertido em hexadecimal é: {}.'.format(numero, hex(numero)[2:]))
+else:
+    print('Opção inválida')
+
+# ===== Desafio 40 =====
+
+num1 = int(input('Digite um número inteiro: '))
+num2 = int(input('Digite outro número inteiro: '))
+
+if num1 > num2:
+    print('Entre {} e {} o maior número é {}.'.format(num1, num2, num1))
+elif num2 > num1:
+    print('Entre {} e {} o maior número é {}.'.format(num1, num2, num2))
+else:
+    print('Os dois números são iguais!')
+
+
