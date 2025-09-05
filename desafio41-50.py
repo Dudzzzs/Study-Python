@@ -130,3 +130,35 @@ elif computadorJogada == minhaJogada:
     print('O computador jogou {} e você {}. EMPATE!'.format(computadorJogada, minhaJogada))
 else:
     print('Você não sabe jogar!')
+
+# ===== Desafio 48 =====
+
+import time
+
+for c in range(10, 0, -1):
+    print('Faltam {} segundos...'.format(c))
+    time.sleep(1)
+print('\033[1;32mFELIZ ANO NOVO!!\033[m')
+
+# ===== Desafio 49 =====
+
+contador = 0
+pares = []
+
+for c in range(1, 51, 1):
+    if c % 2 == 0:
+        pares.append(c)
+        contador = contador + 1
+print('Os pares entre 1 e 50 são {}'.format(pares))
+
+# ===== Desafio 50 =====
+
+soma = 0
+
+for c in range(1, 501, 1):
+    if c % 2 != 0 and c % 3 == 0:
+        soma = soma + c
+print('A soma dos números ímpares e múltiplos de 3 entre 1 e 500 é: {}'.format(soma))
+
+
+

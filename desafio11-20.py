@@ -12,7 +12,6 @@ largura = float(input('Qual a largura da parede? '))
 area = altura * largura
 rendimentoTinta = 2
 
-
 print('Para uma parede de {} metros de altura e {} metros de largura você irá precisar de {} litros de tinta.'.format(altura, largura, area / rendimentoTinta))
 
 # ===== Desafio 13 =====
@@ -50,7 +49,7 @@ print('Você ficou com o carro por {} dias e percorreu {:.1f} quilômetros. O va
 
 from math import trunc
 
-num = float(input('Digite um número paras que seja mostardo sua parte inteira: '))
+num = float(input('Digite um número paras que seja mostrado sua parte inteira: '))
 print(trunc(num))
 
 # ===== Desafio 18 =====
