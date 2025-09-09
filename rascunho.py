@@ -1,41 +1,34 @@
-# ===== Desafio 63 =====
+# ===== Desafio 67 =====
 
-primeiroTermo = int(input('Qual o primeiro termo da progressão da progressão aritmética? '))
-razao = int(input('Qual é a razão da progressão da progressão aritmética? '))
+continuar = True
+contaNumer = 0
+soma = 0
+maior = 0
+menor = 0
 
-print('Os 10 primeiros termos da sua PA de primeiro termo {} e razão {} são:'.format(primeiroTermo, razao))
+while continuar:
+    numero = int(input('Digite um número inteiro: '))
 
-contaTermo = 1
-termo = 0
+    contaNumer += 1
+    soma += numero
 
-while contaTermo <= 10:
-    if contaTermo == 1:
-        termo = primeiroTermo
-        print('{}º termo: {}'.format(contaTermo, termo))
-    else:
-        termo += razao
-        print('{}º termo: {}'.format(contaTermo, termo))
-
-    contaTermo += 1
-    
-opcao = int(input('Quantos termos você deseja saber a mais? '))
-
-if opcao == 0:
-    print('\033[1;31mPrograma finalizado!\033[m')
-else:
-    for c in range(contaTermo, contaTermo + opcao): 
-        termo += razao
-        print('{}º termo: {}'.format(contaTermo, termo))
-
-        contaTermo +=1
-
-if opcao != 0:
-    print('\033[1;31mPrograma finalizado!\033[m')
-
-        
+    if menor == 0:
+        menor = numero
+    elif numero < menor:
+        menor = numero
+    if numero > maior:
+        maior = numero
     
 
+    opcao = input('\033[1;33mVocê deseja digitar mais números? (S/N)\033[m ').upper()
 
+    if opcao == 'N':
+        continuar = False
+        print('\033[1;31mPrograma encerrado!\033[m')
+
+media = soma / numero
+
+print('Foram digitados {} números. A soma deles é {}, a média entre eles é {}, o maior foi {} e o menor {}.'.format(contaNumer, soma, media, maior, menor))
 
 
         

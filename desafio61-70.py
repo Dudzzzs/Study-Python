@@ -103,18 +103,89 @@ while contaTermo <= 10:
         print('{}º termo: {}'.format(contaTermo, termo))
 
     contaTermo += 1
+
+maisTermos = True
+
+while maisTermos:
+    opcao = int(input('Quantos termos você deseja saber a mais? '))
+
+    if opcao == 0:
+        maisTermos = False
+        print('\033[1;31mPrograma finalizado!\033[m')
+    else:
+        for c in range(contaTermo, contaTermo + opcao): 
+            termo += razao
+            print('{}º termo: {}'.format(contaTermo, termo))
+
+            contaTermo +=1
+
+# ===== Desafio 65 =====
+
+quantiTermos = int(input('Quantos termos você quer mostrar? '))
+t1 = 0
+t2 = 1
+contaTermos = 1
+
+while contaTermos <= quantiTermos:
+    if contaTermos == 1:
+        print('{}º termo: {}'.format(contaTermos, t1))
+        print('2º termo: {}'.format(t2))
+        contaTermos = 3
+    else:
+        t3 = t1 + t2
+        print('{}º termo: {}'.format(contaTermos, t3) )
+        t1 = t2
+        t2 = t3
+
+    contaTermos += 1
+
+# ===== Desafio 66 =====
+
+continuar = True
+quantidadeNumeros = 0
+soma = 0
+
+while continuar:
+    numero = int(input('Digite um número: '))
+
+    if numero == 999:
+        print('\033[1;31mCondição de parada atingida. Programa encerrado!\033[m')
+        continuar = False
+    else:
+        quantidadeNumeros += 1
+        soma += numero
+
+print('Foram digitados {} números antes da condição de parada, e a soma entre eles é {}'.format(quantidadeNumeros, soma))
+
+# ===== Desafio 67 =====
+
+continuar = True
+contaNumer = 0
+soma = 0
+maior = 0
+menor = 0
+
+while continuar:
+    numero = int(input('Digite um número inteiro: '))
+
+    contaNumer += 1
+    soma += numero
+
+    if menor == 0:
+        menor = numero
+    elif numero < menor:
+        menor = numero
+    if numero > maior:
+        maior = numero
     
-opcao = int(input('Quantos termos você deseja saber a mais? '))
 
-if opcao == 0:
-    print('\033[1;31mPrograma finalizado!\033[m')
-else:
-    for c in range(contaTermo, contaTermo + opcao): 
-        termo += razao
-        print('{}º termo: {}'.format(contaTermo, termo))
+    opcao = input('\033[1;33mVocê deseja digitar mais números? (S/N)\033[m ').upper()
 
-        contaTermo +=1
+    if opcao == 'N':
+        continuar = False
+        print('\033[1;31mPrograma encerrado!\033[m')
 
-if opcao != 0:
-    print('\033[1;31mPrograma finalizado!\033[m')
+media = soma / numero
 
+print('Foram digitados {} números. A soma deles é {}, a média entre eles é {}, o maior foi {} e o menor {}.'.format(contaNumer, soma, media, maior, menor))
+    
