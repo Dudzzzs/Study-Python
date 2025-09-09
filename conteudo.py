@@ -46,6 +46,10 @@ elif 'condicao' == 'condicao': #Se a primeira condição for falsa mas ainda hou
 else: #SE a condicão for falsa ele executa o respectivo código
     'codigo'
 
+#Loop FOR
+for c in range('x, y, z'): #C é o index de referencia. Range é o intervalo de vezes que o comando irá ser executado, sendo que é sempre uma vez menos que o último número. Z é o salto de contagem.
+    'código'
 
-
-
+#Loop WHILE
+while 'condição': #While significa “ENQUANTO”, ou seja, enqaunto a condição estabelecida for suprida ele executará o código.
+    'código'

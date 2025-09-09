@@ -1,26 +1,42 @@
-# ===== Desafio 58 =====
+# ===== Desafio 63 =====
 
-idadeMaior = 0
-maisVelho = ''
-somaidades = 0
-mulherMenor20 = 0
+primeiroTermo = int(input('Qual o primeiro termo da progressão da progressão aritmética? '))
+razao = int(input('Qual é a razão da progressão da progressão aritmética? '))
 
-for c in range(1, 6):
-    nome = input('Qual seu nome? ').title()
-    idade = int(input('Qual sua idade? '))
-    sexo = input('Qual seu sexo? ')
-    print('CADASTRO REALIZADO!')
+print('Os 10 primeiros termos da sua PA de primeiro termo {} e razão {} são:'.format(primeiroTermo, razao))
 
-    somaidades += idade
+contaTermo = 1
+termo = 0
 
-    if sexo == 'masculino':
-        if idade > idadeMaior:
-            idadeMaior = idade
-            maisVelho = nome
-    elif sexo == 'feminino':
-        if idade < 20:
-            mulherMenor20 += 1
+while contaTermo <= 10:
+    if contaTermo == 1:
+        termo = primeiroTermo
+        print('{}º termo: {}'.format(contaTermo, termo))
+    else:
+        termo += razao
+        print('{}º termo: {}'.format(contaTermo, termo))
 
-mediaIdades = somaidades / 5
+    contaTermo += 1
+    
+opcao = int(input('Quantos termos você deseja saber a mais? '))
 
-print('A média de idade dessas pessoas é {} anos, o homem mais velho é o {} com {} anos e {} mulheres possuem menos de 20 anos.'.format(mediaIdades, maisVelho, idadeMaior, mulherMenor20))
+if opcao == 0:
+    print('\033[1;31mPrograma finalizado!\033[m')
+else:
+    for c in range(contaTermo, contaTermo + opcao): 
+        termo += razao
+        print('{}º termo: {}'.format(contaTermo, termo))
+
+        contaTermo +=1
+
+if opcao != 0:
+    print('\033[1;31mPrograma finalizado!\033[m')
+
+        
+    
+
+
+
+
+        
+    

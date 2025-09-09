@@ -130,4 +130,34 @@ for c in range(1, 6):
 mediaIdades = somaidades / 5
 
 print('A média de idade dessas pessoas é {} anos, o homem mais velho é o {} com {} anos e {} mulheres possuem menos de 20 anos.'.format(mediaIdades, maisVelho, idadeMaior, mulherMenor20))
-    
+
+# ===== Desafio 59 =====
+
+sexo = input('Qual seu sexo? (M/F) ').upper()
+  
+while sexo != 'M' and sexo != 'F':
+    print('Você digitou algo que não é o seu sexo!')
+    sexo = input('Qual o seu sexo? (M/F) ').upper()
+
+if sexo == 'M':
+    print('Você é homem!')
+elif sexo == 'F':
+    print('Você é mulher!')
+
+print('FIM')
+
+# ===== Desafio 60 =====
+
+import random
+
+numero = random.randint(1,10)
+palpites = 1
+
+resposta = int(input('Qual número entre 1 e 10 foi gerado pelo computador? '))
+
+while numero != resposta:
+    print('Você errou!')
+    resposta = int(input('Qual número entre 1 e 10 foi gerado pelo computador? '))
+    palpites+=1
+
+print('Parabéns você acertou! O número gerado foi {}. Foram necessários {} palpites.'.format(numero, palpites))
