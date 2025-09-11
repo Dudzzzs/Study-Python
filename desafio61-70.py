@@ -189,3 +189,66 @@ media = soma / numero
 
 print('Foram digitados {} números. A soma deles é {}, a média entre eles é {}, o maior foi {} e o menor {}.'.format(contaNumer, soma, media, maior, menor))
     
+# ===== Desafio 68 =====
+
+soma = contador = 0
+
+while True:
+    numero = int(input('Digite um número inteiro: '))
+
+    if numero == 999:
+        break
+
+    soma += numero
+    contador += 1
+
+print(f'Foram digitados {contador} números e a soma deles é {soma}.')
+
+# ===== Desafio 69 =====
+
+while True:
+    numero = int(input('Digite um número para mostrar a sua tabuada: '))
+
+    if numero < 0:
+        break
+
+    for c in range(1, 11):
+        multiplicacao = numero * c
+        print(f'{numero} x {c} = {multiplicacao}')
+
+print('Programa finalizado!')
+
+# ===== Desafio 70 =====
+
+import random
+
+contaVitoria = 0
+
+print('\033[1;33mVAMOS JOGAR PAR OU ÍMPAR!\033[m')
+
+while True:
+    computador = random.randint(1, 10)
+    escolha = input('Você quer par ou ímpar? ').upper()
+    numero = int(input('Digite um número inteiro entre 1 e 10: '))
+
+    soma = computador + numero
+    print(f'computador: {computador} e soma: {soma}')
+
+    if escolha == 'PAR':
+        if soma % 2 == 0:
+            print('\033[1;32mPARABÉNS, VOCÊ GANHOU!!\033[m')
+            contaVitoria += 1
+        else:
+            print('\033[1;31mVOCÊ PERDEU!!\033[m')
+            break
+    elif escolha == 'IMPAR':
+        if soma % 2 == 0:
+            print('\033[1;31mVOCÊ PERDEU!!\033[m')
+            break
+        else:
+            print('\033[1;32mPARABÉNS, VOCÊ GANHOU!!\033[m')
+            contaVitoria += 1
+
+print(f'Foram conquistadas {contaVitoria} vitórias antes de perder.')
+
+        
