@@ -53,3 +53,7 @@ for c in range('x, y, z'): #C é o index de referencia. Range é o intervalo de 
 #Loop WHILE
 while 'condição': #While significa “ENQUANTO”, ou seja, enqaunto a condição estabelecida for suprida ele executará o código.
     'código'
+
+#Variáveis compostas: São variáveis que podem armazenar mais de um valor
+#Tuplas: São varáveis que não podem ser aletaradas seus valores durante a execução do  código
+tuplas = ('valor', 'valor', 'valor')
