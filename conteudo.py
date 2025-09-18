@@ -57,3 +57,20 @@ while 'condição': #While significa “ENQUANTO”, ou seja, enqaunto a condiç
 #Variáveis compostas: São variáveis que podem armazenar mais de um valor
 #Tuplas: São varáveis que não podem ser aletaradas seus valores durante a execução do  código
 tuplas = ('valor', 'valor', 'valor')
+
+#As listas diferentes das tuplas são mutáveis, o que permite adicionar, remover e mudar valores das listas
+listas = ['valor', 'valor', 'valor']
+
+listas.append() #Adiciona elementos no fim da lista
+
+listas.insert(0, 'valor') #Adiciona o valor na posição 0 e arras os outros elementos para frente, o 0 vira o 1 por exemplo
+
+del listas[3] #Exlui o elemento que estava na posição 3
+
+listas.pop(3) #O método pop exclui o último elemento da lista mas posso indicar o índice que quero excluir
+
+listas.remove('valor') #Exclui o valor escolhido da lista
+
+#Quando excluímos valores das listas os índices são resposicionados para trás, excluindo o 3 o item 4 vira o 3 por exemplo.
+
+listas.sort() #Ordena os elementos da lista em ordem crescente

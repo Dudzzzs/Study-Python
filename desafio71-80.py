@@ -175,5 +175,47 @@ tintas = ('Rende muito', 355, 'Toque fosco', 500, 'Toque fosco completo', 661, '
 for i in range(0, len(tintas), 2):
     print(f'{tintas[i]} {8 * '.'} R${tintas[i + 1]:.2f}') 
     
+# ===== Desafio 79 =====
+
+palavras = ('Eduardo', 'Lucas', 'Ana', 'Alice', 'Ariane')
+
+for p in palavras:
+    print(f'\nNa palavra {p} temos as vogais ', end='')
+    for letras in p:
+        if letras.lower() in 'aeiou':
+            print(letras, end= ' ')
+
+# ===== Desafio 80 =====
+
+numeros = []
+maior = 0
+menor = 0
+
+for c in range(1, 6):
+    n = int(input('Digite um valor para ser adicionado na lista: '))
+    numeros.append(n)
+
+    if menor == 0:
+        menor = n
+    elif n < menor:
+        menor = n
+    if n > maior:
+        maior = n
+
+copia = numeros[:]
+copia = ', '.join(map(str, numeros))
+
+print(f'Os números digitados foram {copia}, sendo {maior} o maior estando na posição ', end='')
+for i, num in enumerate(numeros):
+    if num == maior:
+        print(f'{i}, ', end='')
+print(f'e o menor sendo {menor} estando na posição ')
+for i, num in enumerate(numeros):
+    if num == menor:
+        print(f'{i}, ', end='')
+
+
+
+    
 
 
