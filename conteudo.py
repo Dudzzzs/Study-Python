@@ -74,3 +74,5 @@ listas.remove('valor') #Exclui o valor escolhido da lista
 #Quando excluímos valores das listas os índices são resposicionados para trás, excluindo o 3 o item 4 vira o 3 por exemplo.
 
 listas.sort() #Ordena os elementos da lista em ordem crescente
+
+listas.sort(reverse=True) #Ordena de forma decrescente
