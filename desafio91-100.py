@@ -42,8 +42,3 @@ while True:
         break
         
 print('\033[1;31mPrograma finalizado!\033[m')
-
-
-
-    
-

@@ -166,4 +166,119 @@ texto_leve = f'O menor peso foi de {leves[0][1]}kg. Peso de '
 for i, nome in enumerate(leves):
     texto_leve += f'[{leves[i][0]}] '
 
-print(texto_leve)    
+print(texto_leve)
+
+# ===== Desafio 87 =====
+
+pares = []
+impares = []
+
+for c in range(0,7):
+    n = int(input('Digite um número para ser adicionado á sua respectiva lista: '))
+
+    if n % 2 == 0:
+        pares.append(n)
+    else:
+        impares.append(n)
+
+pares = sorted(pares)
+impares = sorted(impares)
+
+print(f'Os números pares digitados foram \033[1;32m{pares}\033[m e os ímpares foram \033[1;31m{impares}\033[m. ')
+
+# ===== Desafio 88 =====
+
+matriz = [[0,0,0], [0,0,0], [0,0,0]]
+
+for l in range(0,3):
+    for c in range(0,3):
+        n = int(input(f'Digite um número pra ser adicionado na posição [{l}, {c}]: '))
+        matriz[l][c] = n
+
+print('\033[1;33mSua matriz ficou da seguinte forma: \033[m')
+
+for l in range(0,3):
+    for c in range(0,3):
+        print(f'[{matriz[l][c]:^5}]' , end=' ')
+    print()
+
+# ===== Desafio 89 =====
+
+pares = []
+soma_pares= 0
+terceira_coluna = []
+soma_3coluna = 0
+segunda_linha = []
+maior_segunda_linha = 0
+
+matriz = [[0,0,0], [0,0,0], [0,0,0]]
+
+for l in range(0,3):
+    for c in range(0,3):
+        n = int(input(f'Digite um número pra ser adicionado na posição [{l}, {c}]: '))
+        matriz[l][c] = n
+
+        if l == 1:
+            segunda_linha.append(n)
+            if n > maior_segunda_linha:
+                maior_segunda_linha = n
+
+        if c == 2:
+            soma_3coluna += n
+            terceira_coluna.append(n)
+
+        if n % 2 == 0:
+            soma_pares += n
+            pares.append(n)
+
+
+print('\033[1;33mSua matriz ficou da seguinte forma: \033[m')
+
+for l in range(0,3):
+    for c in range(0,3):
+        print(f'[{matriz[l][c]:^5}]' , end=' ')
+    print()
+
+print(f'\033[1;32mOs valores pares digitados foram {pares} e soma dos valores pares digitados é {soma_pares}.\033[m')
+print(f'\033[1;34mOs valores digitados na terceira coluna foram {terceira_coluna} e soma dos valores digitados nessa coluna é {soma_3coluna}.\033[m')
+print(f'\033[1;35mOs valores digitados na segunda linha foram {segunda_linha} e o maior valor digitado nessa linha é {maior_segunda_linha}.\033[m')
+
+# ===== Desafio 90 =====
+
+import random 
+import time
+
+jogo = []
+bilhetes = []
+
+espacamento = '-=' * 12
+
+print(espacamento)
+print(f'       \033[1;34mMEGA SENA\033[m     ')
+print(espacamento)
+
+jogos = int(input('Quantos jogos você quer gerar? '))
+
+print(f'{'-=' * 2} \033[1;33mGERANDO {jogos} JOGOS\033[m {'-=' * 2}')
+
+for j in range(1, jogos + 1):
+    jogo = []
+    while True:
+        n = random.randint(1, 60)
+
+        if n not in jogo:
+            jogo.append(n)
+        
+        if len(jogo) == 6:
+            break
+    
+    jogo = sorted(jogo)
+    bilhetes.append(jogo[:])
+
+for b in range(0, len(bilhetes)):
+    print(f'Jogo {b + 1}: {bilhetes[b]}')
+    time.sleep(1)
+    
+print(espacamento)
+print(f'       \033[1;32mBOA SORTE!\033[m     ')
+print(espacamento)
