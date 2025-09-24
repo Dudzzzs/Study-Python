@@ -1,47 +1,35 @@
-# ===== Desafio 91 =====
+# ===== Desafio 93 =====
 
-aluno = []
-sala = []
+import random
 
-while True:
-    aluno.clear()
+vencedor = {'nome': '', 'dado': 0}
+jogador = {}
+participantes = []
+contador = 1
+valores_usados = []
 
-    nome = input('Digite o nome do aluno: ').title()
-    aluno.append(nome)
-    nota1 = float(input('Digite a nota 1: '))
-    aluno.append(nota1)
-    nota2 = float(input('Digite a nota 2: '))
-    aluno.append(nota2)
-    media = (nota1 + nota2) / 2
-    aluno.append(media)
+for j in range(0,4):
+    jogador['nome'] = input(f'Qual o nome do {contador} jogador? ').title()
+    
+    while True:
+        dado = random.randint(1,6)
 
-    sala.append(aluno[:])
+        if dado not in valores_usados:
+            valores_usados.append(dado)
+            jogador['dado'] = dado
+            break
+    
+    contador += 1
+    participantes.append(jogador.copy())
 
-    opcao = input('Deseja continuar? [S/N] ').upper()
+for p in participantes:
+    if p['dado'] > vencedor['dado']:
+        vencedor = p.copy()
 
-    if opcao == 'N':
-        break
+for p in participantes:
+    print(f'O jogador {p["nome"]} jogou o dado e tirou {p["dado"]}.')
 
-print(f'\033[1;33mAluno | Nome | Nota 1 | Nota 2 | Média\033[m')
-print('-=' * 20)
-
-for c in range(0, len(sala)):
-    print(f'{c + 1:^5} | {sala[c][0]:^5} | {sala[c][1]:^5} | {sala[c][2]:^5} | {sala[c][3]:^5}')
-
-while True:
-    a = int(input('Deseja mostrar a nota de qual aluno? (0 interrompe) '))
-
-    if a == 0:
-        break
-    elif a - 1 > len(sala):
-        print('Esse aluno não existe!')
-    else:
-        print(f'{a:^5} | {sala[a - 1][0]:^5} | {sala[a - 1][1]:^5} | {sala[a - 1][2]:^5} | {sala[a - 1][3]:^5}')
-
-    if a == 0:
-        break
-        
-print('\033[1;31mPrograma finalizado!\033[m')
+print(f'\033[1;32mO vencedor foi {vencedor["nome"]} que tirou {vencedor["dado"]}.\033[m')
 
 
 

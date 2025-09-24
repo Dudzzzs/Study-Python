@@ -76,3 +76,18 @@ listas.remove('valor') #Exclui o valor escolhido da lista
 listas.sort() #Ordena os elementos da lista em ordem crescente
 
 listas.sort(reverse=True) #Ordena de forma decrescente
+
+#Os dicionários armazenam dados literais, com eles posso não apenas guardar, mas também posso identificar os dados.
+dicionarios = {'nome': 'eduardo', 'idade': 21}
+
+dicionarios['sexo'] = 'masculino' #Adiciona dados ao dicionário
+
+del dicionarios["idade"] #Exclui o dado “idade”
+
+dicionarios.values() #Pega os valores do dicionário, nesse caso: Eduardo e 21
+
+dicionarios.keys() #Pega as “chaves” ou identificadores dos dicionários, nesse caso: Nome e idade
+
+dicionarios.items() #Pegas as chaves e os valores do dicionário, nesse caso: Nome: Eduardo e idade: 21
+
+dicionarios.copy() #Cria uma cópia do dicionário que me permite adicioná-lo em uma lista sem criar relação indesejada
