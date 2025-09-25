@@ -1,35 +1,53 @@
-# ===== Desafio 93 =====
+# ===== Desafio 97 =====
 
-import random
-
-vencedor = {'nome': '', 'dado': 0}
 jogador = {}
-participantes = []
-contador = 1
-valores_usados = []
+time = []
+total_gols = 0
+conta_partida = 0
+gols_por_part = []
 
-for j in range(0,4):
-    jogador['nome'] = input(f'Qual o nome do {contador} jogador? ').title()
+while True: 
+    jogador['nome'] = input('Digite o nome do jogador: ').title()
+    jogador['partidas'] = int(input(f'Quantas partidas {jogador["nome"]} jogou nesse campeonato? '))
+
+    for p in range(0, jogador['partidas']):
+        gols = int(input(f'Quantos gols {jogador["nome"]} fez no jogo {conta_partida + 1}? '))
+        
+        gols_por_part.append(gols)
+        
+        conta_partida += 1
+
+        total_gols += gols
     
-    while True:
-        dado = random.randint(1,6)
+    jogador['gols'] = gols_por_part[:]
+    jogador['total_gols'] = total_gols
+    jogador['total_partidas'] = conta_partida
 
-        if dado not in valores_usados:
-            valores_usados.append(dado)
-            jogador['dado'] = dado
-            break
-    
-    contador += 1
-    participantes.append(jogador.copy())
+    time.append(jogador.copy())
 
-for p in participantes:
-    if p['dado'] > vencedor['dado']:
-        vencedor = p.copy()
+    conta_partida = 0
+    total_gols = 0
+    gols_por_part.clear()
 
-for p in participantes:
-    print(f'O jogador {p["nome"]} jogou o dado e tirou {p["dado"]}.')
+    opcao = input('\033[1;34mDeseja continuar? (S/N) \033[m').upper()
 
-print(f'\033[1;32mO vencedor foi {vencedor["nome"]} que tirou {vencedor["dado"]}.\033[m')
+    if opcao == 'N':
+        break
+
+print('índice | nome | total de partidas | total gols | gols por partida')
+for c, j in enumerate(time):
+    print(f'{c + 1} | {j['nome']} | {j['total_partidas']} | {j['total_gols']} | {j['gols']}')
+
+while True:
+    opcao = int(input('Deseja mostrar os dados de qual jogador? (999 interrompe) '))
+
+    if opcao == 999:
+        print('Fim de programa.')
+        break
+    else:
+        print(f'{opcao} | {time[opcao -1]['nome']} | {time[opcao -1]['total_partidas']} | {time[opcao -1]['total_gols']} | {time[opcao -1]['gols']}')
+
+
 
 
 
