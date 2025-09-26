@@ -224,3 +224,50 @@ while True:
     else:
         print(f'{opcao} | {time[opcao -1]['nome']} | {time[opcao -1]['total_partidas']} | {time[opcao -1]['total_gols']} | {time[opcao -1]['gols']}')
 
+# ===== Desafio 98 =====
+
+def area(larg, comp):
+    result = larg * comp
+    return result
+
+larg = int(input('\033[1;31mDigite a largura do terreno em metros: \033[m'))
+compr = int(input('\033[1;33mDigite o comprimento do terreno em metros: \033[m'))
+
+print(f'\033[1;32mA área desse terreno é de {area(larg, compr)}m2.\033[m')
+
+# ===== Desafio 99 =====
+
+def mensagem(msg):
+    tam = len(msg) + 4
+    print('=' * tam)
+    print(f'  {msg}')
+    print('=' * tam)
+
+msg = input('Digite a mensagem que deseja exibir: ').title()
+mensagem(msg)
+
+# ===== Desafio 100 =====
+
+def contador(i, f, p):
+    print(f'\033[1;34mContagem: Início({i}); Fim({f}); Passo({p})\033[m')
+    
+    if i < f:
+        for n in range(i, f + 1, p):
+            print(f'{n} ', end='')
+    elif i > f:
+        p = 0 - p
+        for n in range(i, f - 1, p):
+            print(f'{n} ', end='')
+    print('FIM')
+
+contador(1, 10, 1)
+contador(10, 0, 2)
+
+inicio = int(input('Início: '))
+fim = int(input('Fim: '))
+passo = int(input('Passo: '))
+
+contador(inicio, fim, passo)
+
+
+
