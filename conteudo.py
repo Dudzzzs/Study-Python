@@ -91,3 +91,11 @@ dicionarios.keys() #Pega as “chaves” ou identificadores dos dicionários, ne
 dicionarios.items() #Pegas as chaves e os valores do dicionário, nesse caso: Nome: Eduardo e idade: 21
 
 dicionarios.copy() #Cria uma cópia do dicionário que me permite adicioná-lo em uma lista sem criar relação indesejada
+
+def funcao(): #Cria uma função que executa um código determinado recebendo os parâmetros que eu escolho
+    'codigo'
+
+def funcao(a, b, c=0): #Cria uma função onde o parâmetro C é opcional, podendo declará-lo ou não.
+    'codigo'
+    return 'valor' #Faz com que a função não apenas execute um código mas tambem retorna um valor que posso usar
+

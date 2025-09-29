@@ -1,21 +1,19 @@
-# ===== Desafio 102 =====
+# ===== Desafio 106 =====
 
-import random
-
-def contador(*num):
-    maior = 0
-
-    for n in num:
-        if n > maior:
-            maior = n
-
-    print(f'\033[1;32mO maior número entre {num} é {maior}: \033[m')
-
-contador(1, 2, 43)
-
-
-
-
-
+def leiaInt(resp):
     
+    ok = False
+    valor = 0
 
+    while ok == False:
+        n = str(input(resp))
+        if n.isnumeric():
+            ok = True
+            valor = int(n)
+        else: 
+            print('\033[1;31mERRO, DIGITE UM NÚMERO!\033[m')
+    
+    return valor
+
+n = leiaInt('Digite um número: ')
+print(f'\033[1;32mVOCÊ DIGITOU O NÚMERO {n}')
