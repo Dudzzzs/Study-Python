@@ -122,3 +122,74 @@ def leiaInt(resp):
 
 n = leiaInt('Digite um número: ')
 print(f'\033[1;32mVOCÊ DIGITOU O NÚMERO {n}')
+
+# ===== Desafio 107 =====
+
+def notas(*nota):
+    """
+    -> Função que recebe várias notas e calcula:
+    - Quantidade de notas;
+    - Maior nota;
+    - Menor nota;
+    - Média das notas;
+    - Situação da turma com base na média.
+    """
+
+    resultado = {}
+    soma_nota = 0
+    conta_nota = len(nota)
+    maior_nota = 0
+    menor_nota = 0
+    media_nota = 0
+    situacao = ''
+
+    resultado['Quantidade de notas'] = conta_nota
+
+    for n in nota:
+        if n > maior_nota:
+            maior_nota = n
+        if menor_nota == 0:
+            menor_nota = n
+        elif n < menor_nota:
+            menor_nota = n
+        soma_nota += n
+    
+    resultado['Maior nota'] = maior_nota
+    resultado['Menor nota'] = menor_nota
+
+    media_nota = soma_nota / conta_nota
+    resultado['Média das notas'] = media_nota
+
+    if media_nota < 7:
+        situacao = 'Ruim'
+    elif media_nota == 7:
+        situacao = 'Mediana'
+    else:
+        situacao = 'Boa'
+    
+    resultado['Situação'] = situacao
+
+    return resultado
+
+help(notas)
+print(notas(3, 4.5, 10, 7, 8, 1.4, 6))
+
+# ===== Desafio 108 =====
+
+def pyHelp():
+    while True: 
+        msg = 'Sistema de ajuda Python'
+        tam = len(msg) + 4
+        print('\033[7;40m=\033[m' * tam)
+        print(f'\033[7;40m  {msg}  \033[m')
+        print('\033[7;40m=\033[m' * tam)
+        
+        comando = input('Digite o comando que deseja receber aprender sobre seu funcionamento: (FIM = Encerrar) ')
+
+        if comando == 'FIM':
+            print('\033[1;31mPrograma encerrado!!\033[m')
+            break
+        else:
+            help(comando)
+           
+pyHelp()
