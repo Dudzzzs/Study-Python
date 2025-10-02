@@ -99,3 +99,10 @@ def funcao(a, b, c=0): #Cria uma função onde o parâmetro C é opcional, poden
     'codigo'
     return 'valor' #Faz com que a função não apenas execute um código mas tambem retorna um valor que posso usar
 
+#Para manter o meu código mais organizado eu posso “modularizar” algumas funções, isso seria colocar ela em outro arquivo separado do programa principal. Nesse arquivo separado posso guardar funções úteis a mim e exportar ela para outros programas.
+
+import math #Consigo importar do arquivo "math" todas as funções presentes nele.
+
+from math import factorial #Importo apenas a função factorial do arquivo math
+
+math.factorial() #Uso a função factorial do arquivo math

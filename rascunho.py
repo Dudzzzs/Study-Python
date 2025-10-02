@@ -1,19 +1,17 @@
-# ===== Desafio 108 =====
+# ===== Desafio 114 =====
 
-def pyHelp():
-    while True: 
-        msg = 'Sistema de ajuda Python'
-        tam = len(msg) + 4
-        print('\033[7;40m=\033[m' * tam)
-        print(f'\033[7;40m  {msg}  \033[m')
-        print('\033[7;40m=\033[m' * tam)
-        
-        comando = input('Digite o comando que deseja receber aprender sobre seu funcionamento: (FIM = Encerrar) ')
+from import_modulos.moeda import funcoes 
+from import_modulos.verificacao import verif
 
-        if comando == 'FIM':
-            print('\033[1;31mPrograma encerrado!!\033[m')
-            break
-        else:
-            help(comando)
-           
-pyHelp()
+while True:
+    preco = input('Digite o preço do produto: R$').replace(',', '.').strip()
+    
+    if verif.verificacao(preco):
+        break
+    
+
+aumento = int(input('Digite a porcentagem de aumento: '))
+reducao = int(input('Digite a porcentagem de redução: '))
+
+funcoes.resumo(preco, aumento, reducao)
+

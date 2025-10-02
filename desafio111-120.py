@@ -1,0 +1,47 @@
+# ===== Desafio 111 =====
+
+import moeda
+
+preco = float(input('Digite o preço do produto: R$'))
+
+print(f'\033[1;33mA metade de R${moeda.formatar(preco)} é R${moeda.metade(preco, form=True)}\033[m')
+print(f'\033[1;34mO dobro de R${moeda.formatar(preco)} é R${moeda.dobro(preco)}\033[m')
+print(f'\033[1;32mO preço R${moeda.formatar(preco)} acrescido de 10% é R${moeda.aument(preco, form=True)}\033[m')
+print(f'\033[1;31mO preço R${moeda.formatar(preco)} reduzido de 5% é R${moeda.reduz(preco)}\033[m')
+
+# ===== Desafio 112 =====
+
+import moeda
+
+preco = float(input('Digite o preço do produto: R$'))
+aumento = int(input('Digite a porcentagem de aumento: '))
+reducao = int(input('Digite a porcentagem de redução: '))
+
+moeda.resumo(preco, aumento, reducao)
+
+# ===== Desafio 113 =====
+
+from import_modulos.moeda import funcoes
+
+preco = float(input('Digite o preço do produto: R$'))
+aumento = int(input('Digite a porcentagem de aumento: '))
+reducao = int(input('Digite a porcentagem de redução: '))
+
+funcoes.resumo(preco, aumento, reducao)
+
+# ===== Desafio 114 =====
+
+from import_modulos.moeda import funcoes 
+from import_modulos.verificacao import verif
+
+while True:
+    preco = input('Digite o preço do produto: R$').replace(',', '.').strip()
+    
+    if verif.verificacao(preco):
+        break
+    
+
+aumento = int(input('Digite a porcentagem de aumento: '))
+reducao = int(input('Digite a porcentagem de redução: '))
+
+funcoes.resumo(preco, aumento, reducao)

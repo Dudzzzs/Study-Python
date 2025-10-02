@@ -193,3 +193,25 @@ def pyHelp():
             help(comando)
            
 pyHelp()
+
+# ===== Desafio 109 =====
+
+import moeda
+
+preco = float(input('Digite o preço do produto: R$'))
+
+print(f'\033[1;33mA metade de R${preco:.2f} é R${moeda.metade(preco):.2f}\033[m')
+print(f'\033[1;34mO dobro de R${preco:.2f} é R${moeda.dobro(preco):.2f}\033[m')
+print(f'\033[1;32mO preço R${preco:.2f} acrescido de 10% é R${moeda.aument(preco):.2f}\033[m')
+print(f'\033[1;31mO preço R${preco:.2f} reduzido de 5% é R${moeda.reduz(preco):.2f}\033[m')
+
+# ===== Desafio 110 =====
+
+import moeda
+
+preco = float(input('Digite o preço do produto: R$'))
+
+print(f'\033[1;33mA metade de R${moeda.formatar(preco)} é R${moeda.formatar(moeda.metade(preco))}\033[m')
+print(f'\033[1;34mO dobro de R${moeda.formatar(preco)} é R${moeda.formatar(moeda.dobro(preco))}\033[m')
+print(f'\033[1;32mO preço R${moeda.formatar(preco)} acrescido de 10% é R${moeda.formatar(moeda.aument(preco))}\033[m')
+print(f'\033[1;31mO preço R${moeda.formatar(preco)} reduzido de 5% é R${moeda.formatar(moeda.reduz(preco))}\033[m')
