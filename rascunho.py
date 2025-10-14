@@ -1,17 +1,22 @@
-# ===== Desafio 114 =====
+# ===== Desafio 117 =====
 
-from import_modulos.moeda import funcoes 
-from import_modulos.verificacao import verif
+from import_modulos.pessoas import pessoas
 
 while True:
-    preco = input('Digite o preço do produto: R$').replace(',', '.').strip()
-    
-    if verif.verificacao(preco):
+    msg = '\033[1;33mMENU PRINCIPAL \033[m'
+    tam = len(msg) + 4
+    print('=' * tam)
+    print(f'       {msg}')
+    print()
+    print('\033[1;35m1: Cadastrar pessoa; \n2: Exibir pessoas; \n3: Sair do programa.\033[m')
+    print('=' * tam)
+
+    opcao = int(input('\033[1;35mOpção: \033[m'))
+
+    if opcao == 3:
+        print('\033[1;34mPrograma encerrado!\033[m')
         break
+    else:
+        pessoas.banco_dados(opcao)
     
-
-aumento = int(input('Digite a porcentagem de aumento: '))
-reducao = int(input('Digite a porcentagem de redução: '))
-
-funcoes.resumo(preco, aumento, reducao)
-
+   

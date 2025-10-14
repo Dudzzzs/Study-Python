@@ -45,3 +45,29 @@ aumento = int(input('Digite a porcentagem de aumento: '))
 reducao = int(input('Digite a porcentagem de redução: '))
 
 funcoes.resumo(preco, aumento, reducao)
+
+# ===== Desafio 115 =====
+
+while True:
+    try: 
+        valor = int(input('Digite um valor inteiro: '))
+    except KeyboardInterrupt:
+        print('\033[1;33mO usuário preferiu não digitar um valor!\033[m')
+        break
+    except (ValueError, TypeError):
+        print('\033[1;31mERRO, DIGITE UM VALOR INTEIRO!\033[m')
+    else:
+        print(f'O valor digitado foi: {valor}')
+        break
+
+# ===== Desafio 116 =====
+
+import urllib
+import urllib.request
+
+try:
+    site = urllib.request.urlopen('https://www.pudim.com.br/')
+except urllib.error.URLError:
+    print('\033[1;31mO SITE NÃO ESTÁ ACESSÍVEL\033[m')
+else:
+    print('\033[1;32mO SITE ESTÁ ACESSSÍVEL\033[m')
