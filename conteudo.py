@@ -106,3 +106,23 @@ import math #Consigo importar do arquivo "math" todas as funções presentes nel
 from math import factorial #Importo apenas a função factorial do arquivo math
 
 math.factorial() #Uso a função factorial do arquivo math
+
+#Tratamento de erro e exceções. Erros acontecem no python quando há um erro de sintaxe ou semântica no código.
+
+try: #O python tenta executar o código para saber se dá erro
+    'código'
+
+except: #Caso haja erro o python executa o código seguinte
+    'codigo'
+
+#except TypeError: O python executa o seguinte código caso o erro seja de tipo de dado
+    'codigo'
+
+#except Exception as erro: Cria a varável erro que posso usar para exibir a informação que quero do erro, como `erro.__class__` que exibe a classe do erro
+    'codigo'
+
+else: #Caso não haja erro pyton executa o seguinte código
+    'codigo'
+
+finally: #O python executa o código independente de haver erro ou não
+    'codigo'
